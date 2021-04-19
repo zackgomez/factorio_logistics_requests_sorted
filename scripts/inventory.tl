@@ -1,6 +1,7 @@
-local Inventory = {}
+local record Inventory
+end
 
-Inventory.SortPlayerInventory = function(player)
+function Inventory.SortPlayerInventory(player: LuaPlayer)
     if player.character == nil or (not player.character.valid) then
         return
     end
@@ -23,9 +24,9 @@ Inventory.SortPlayerInventory = function(player)
 
     --put them back, now in sorted order
     local slotIndex = 1
-    local lastGroup = nil
+    local lastGroup: LuaGroup | nil = nil
     local separateGroups = player.mod_settings["logistics_requests_sorted-separate_groups"].value
-    for i = 1,#inventory - inventory.count_empty_stacks() do
+    for i = 1, #inventory - inventory.count_empty_stacks() do
         local invitem = inventory[i]
         local group = invitem.prototype.group;
 

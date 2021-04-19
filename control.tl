@@ -1,6 +1,6 @@
 local Inventory = require("scripts/inventory")
 
-local function OnSlotsChanged(event)
+local function OnSlotsChanged(event: OnEntityLogisticSlotChangedEvent)
     -- only if player changed it directly
     if event.player_index ~= nil then
         local enabled = settings.get_player_settings(event.player_index)["logistics_requests_sorted-enabled"].value
