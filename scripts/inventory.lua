@@ -24,13 +24,13 @@ Inventory.SortPlayerInventory = function(player)
     --put them back, now in sorted order
     local slotIndex = 1
     local lastGroup = nil
+    local separateGroups = player.mod_settings["logistics_requests_sorted-separate_groups"].value
     for i = 1,#inventory - inventory.count_empty_stacks() do
         local invitem = inventory[i]
         local group = invitem.prototype.group;
 
-
         -- Make sure we are on a new line of 10 items for each category
-        if lastGroup ~= nil and lastGroup ~= group then
+        if separateGroups and lastGroup ~= nil and lastGroup ~= group then
             if slotIndex % 10 ~= 1 then
                 local row = math.floor((slotIndex - 1) / 10);
                 slotIndex = (row + 1) * 10 + 1
