@@ -1,13 +1,13 @@
 {
-    "name": "logistics_requests_sorted",
+    "name": "zacks_logistics_requests",
     "version": "1.0.0",
-    "title": "Logistics Requests Sorted",
-    "author": "tulius",
+    "title": "Zack's Logistics Requests Mod",
+    "author": "zackgomez",
     "contact": "",
     "homepage": "",
     "factorio_version": "1.1",
     "dependencies": [
         "base >= 1.1.17"
     ],
-    "description": "Keeps your logistics requests permanently sorted"
+    "description": "Variety of features to manage logistics requests"
 }
